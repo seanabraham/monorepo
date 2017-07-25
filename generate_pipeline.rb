@@ -31,33 +31,33 @@ steps = []
 
 if run_android
   steps << {
-    trigger: "android-builds",
-    build: {
-      commit: ENV['BUILDKITE_COMMIT'],
-      message: ENV['BUILDKITE_MESSAGE'],
-      branch: ENV['BUILDKITE_BRANCH']
+    'trigger' => 'android-builds',
+    'build' => {
+      'commit' => ENV['BUILDKITE_COMMIT'],
+      'message' => ENV['BUILDKITE_MESSAGE'],
+      'branch' => ENV['BUILDKITE_BRANCH']
     }
   }
 end
 
 if run_ios
   steps << {
-    trigger: "ios-builds",
-    build: {
-      commit: ENV['BUILDKITE_COMMIT'],
-      message: ENV['BUILDKITE_MESSAGE'],
-      branch: ENV['BUILDKITE_BRANCH']
+    'trigger' => 'ios-builds',
+    'build' => {
+      'commit' => ENV['BUILDKITE_COMMIT'],
+      'message' => ENV['BUILDKITE_MESSAGE'],
+      'branch' => ENV['BUILDKITE_BRANCH']
     }
   }
 end
 
 if run_other
   steps << {
-    trigger: "other-builds",
-    build: {
-      commit: ENV['BUILDKITE_COMMIT'],
-      message: ENV['BUILDKITE_MESSAGE'],
-      branch: ENV['BUILDKITE_BRANCH']
+    'trigger' => 'other-builds',
+    'build' => {
+      'commit' => ENV['BUILDKITE_COMMIT'],
+      'message' => ENV['BUILDKITE_MESSAGE'],
+      'branch' => ENV['BUILDKITE_BRANCH']
     }
   }
 end
