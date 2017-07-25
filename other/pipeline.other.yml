@@ -1,0 +1,4 @@
+steps:
+  - label: 'Build other'
+    command: 'other/other.sh'
+
