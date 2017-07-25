@@ -1,0 +1,4 @@
+steps:
+  - label: 'Build android'
+    command: 'android/android.sh'
+
