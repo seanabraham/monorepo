@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'yaml'
 
-merge_base = `git merge-base HEAD master`.strip
+merge_base = `git merge-base HEAD origin/master`.strip
 
 diff = `git diff --name-only #{merge_base}..HEAD`
 
