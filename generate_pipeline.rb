@@ -11,19 +11,16 @@ run_other = false
 
 diff.split("\n").each do |file|
   if File.dirname(file) == 'android'
-    puts "Running android!"
     run_android = true
     next
   end
 
   if File.dirname(file) == 'ios'
-    puts "Running iOS!"
     run_ios = true
     next
   end
 
   if File.dirname(file) == 'other'
-    puts "Running other!"
     run_other = true
   end
 end
