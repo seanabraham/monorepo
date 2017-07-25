@@ -62,6 +62,6 @@ if run_other
   }
 end
 
-pipeline = { steps: steps }.to_yaml
+pipeline = { 'steps' => steps }.to_yaml
 
 puts pipeline
