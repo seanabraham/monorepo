@@ -27,38 +27,41 @@ diff.split('\n').each do |file|
   end
 end
 
+steps = []
+
 if run_android
-  android_trigger = {
+  steps << {
     trigger: "android-builds",
     build: {
       commit: ENV['BUILDKITE_COMMIT'],
       message: ENV['BUILDKITE_MESSAGE'],
       branch: ENV['BUILDKITE_BRANCH']
     }
-  }.to_yaml
-  puts android_trigger
+  }
 end
 
 if run_ios
-  ios_trigger = {
+  steps << {
     trigger: "ios-builds",
     build: {
       commit: ENV['BUILDKITE_COMMIT'],
       message: ENV['BUILDKITE_MESSAGE'],
       branch: ENV['BUILDKITE_BRANCH']
     }
-  }.to_yaml
-  puts_ios_trigger
+  }
 end
 
 if run_other
-  other_trigger = {
+  steps << {
     trigger: "other-builds",
     build: {
       commit: ENV['BUILDKITE_COMMIT'],
       message: ENV['BUILDKITE_MESSAGE'],
       branch: ENV['BUILDKITE_BRANCH']
     }
-  }.to_yaml
-  puts other_trigger
+  }
 end
+
+pipeline = { steps: steps }.to_yaml
+
+puts pipeline
