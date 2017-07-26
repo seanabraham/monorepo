@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euf -o pipefail
 
-echo "Hello, Other World!"
+echo "Hello, Other Parallel World!"
