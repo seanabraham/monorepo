@@ -30,7 +30,7 @@ steps = []
 if run_android
   steps << {
     'trigger' => 'android-builds',
-    'async' => 'false',
+    'async' => false,
     'build' => {
       'commit' => ENV['BUILDKITE_COMMIT'],
       'message' => ENV['BUILDKITE_MESSAGE'],
@@ -42,7 +42,7 @@ end
 if run_ios
   steps << {
     'trigger' => 'ios-builds',
-    'async' => 'false',
+    'async' => false,
     'build' => {
       'commit' => ENV['BUILDKITE_COMMIT'],
       'message' => ENV['BUILDKITE_MESSAGE'],
@@ -54,7 +54,7 @@ end
 if run_other
   steps << {
     'trigger' => 'other-builds',
-    'async' => 'false',
+    'async' => false,
     'build' => {
       'commit' => ENV['BUILDKITE_COMMIT'],
       'message' => ENV['BUILDKITE_MESSAGE'],
